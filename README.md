@@ -28,23 +28,9 @@ I don't know \____ to go out or not . : weather/whether
 
 本次实验使用了两种特征提取方法，Current word-current label和Previous label-current label，结构化感知机算法如下：
 
-Input: $D_{\text { train }}=\left\{\left(\mathbf{x}^{1}, \mathbf{y}^{1}\right) \ldots\left(\mathbf{x}^{M}, \mathbf{y}^{M}\right)\right\}$
-set $\mathbf{w}=0$
-for $(\mathbf{x}, \mathbf{y}) \in D_{\text { train }}$ do
-    predict $\hat{\mathbf{y}}=\underset{\mathbf{y} \in \mathcal{Y}^{\mathcal{N}}}{\arg \max } \mathbf{w} \cdot \Phi(\mathbf{x}, \mathbf{y})$
-    if $\hat{\mathbf{y}} \neq \mathbf{y}$ then
-        update $\mathbf{w}=\mathbf{w}+\Phi(\mathbf{x}, \mathbf{y})-\Phi(\mathbf{x}, \hat{\mathbf{y}})$
-return $\mathbf{w}$
-
 4. Viterbi and Beam search
 
 基于第3次实验，使用Viterbi和Beam search去加速结构化感知机的argmax部分，
-
-word sequence $\mathbf{x}=\left[x_{1}, \ldots, x_{N}\right],$ weights $\mathbf{w}$
-
-set matrix $V^{|\mathcal{Y}| \times N}=0$ set backpointer
-
-$\begin{aligned} B^{|\mathcal{Y}| \times N} &=0 \\ V[y, n] &=\max _{y^{\prime} \in \mathcal{Y}} V\left[y^{\prime}, n-1\right]+\mathbf{w} \cdot \phi\left(y, y^{\prime}, \mathbf{x}\right) \\ B[y, n] &=\operatorname{argmax}_{y^{\prime} \in \mathcal{Y}} V\left[y^{\prime}, n-1\right]+\mathbf{w} \cdot \phi\left(y, y^{\prime}, \mathbf{x}\right) \end{aligned}$
 
 5.  Neural Language Modelling
 
