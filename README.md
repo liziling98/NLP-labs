@@ -1,7 +1,5 @@
 # NLP-labs
 
-several lab assignments in NLP class
-
 1. Text Classification with the perceptron
 
 使用binary perceptron和bag of words representation对电影评论文本进行情感分析，只针对正面情绪和负面情绪，数据来源地址为http://www.cs.cornell.edu/people/pabo/movie-review-data/review_polarity.tar.gz. 
